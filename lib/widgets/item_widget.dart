@@ -5,6 +5,7 @@ class ItemWidget extends StatelessWidget {
   final Item item;
 
   const ItemWidget({super.key, required this.item}) 
+  // ignore: unnecessary_null_comparison
   : assert(item != null);
 
   @override
