@@ -41,11 +41,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        backgroundColor: MyTheme.darkBluishColor,
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(CupertinoIcons.cart,color: Colors.white,),
+        backgroundColor: context.theme.floatingActionButtonTheme.backgroundColor,
       ),
       body: SafeArea(
         child: Container(
@@ -59,8 +59,6 @@ class _HomePageState extends State<HomePage> {
                 CatalogList().py16().expand()
               else
                 CircularProgressIndicator().centered().expand(),
-                
-              
             ],
           ),
         ),

@@ -20,9 +20,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -32,7 +32,7 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      MaterialStateProperty.all(context.theme.floatingActionButtonTheme.backgroundColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
               child: "Add to Cart".text.make(),
             ).wh(120, 50)
@@ -44,8 +44,8 @@ class HomeDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-                    tag: Key(catalog.id.toString()),
-                    child: Image.network(catalog.image))
+                tag: Key(catalog.id.toString()),
+                child: Image.network(catalog.image))
                 .h32(context),
             Expanded(
                 child: VxArc(
@@ -53,12 +53,12 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.top,
               arcType: VxArcType.convey,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(context.primaryColor)
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
