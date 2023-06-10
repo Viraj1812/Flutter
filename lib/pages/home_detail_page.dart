@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:first_project/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -27,13 +28,8 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(context.theme.floatingActionButtonTheme.backgroundColor),
-                  shape: MaterialStateProperty.all(StadiumBorder())),
-              child: "Add to Cart".text.make(),
+            AddToCart(
+              catalog: catalog,
             ).wh(120, 50)
           ],
         ).p32(),
@@ -43,8 +39,8 @@ class HomeDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-                tag: Key(catalog.id.toString()),
-                child: Image.network(catalog.image))
+                    tag: Key(catalog.id.toString()),
+                    child: Image.network(catalog.image))
                 .h32(context),
             Expanded(
                 child: VxArc(
@@ -63,10 +59,10 @@ class HomeDetailPage extends StatelessWidget {
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
                     "Eirmod tempor dolore amet consetetur accusam diam stet eos sed. Amet accusam sed sit duo magna et ipsum ipsum. Kasd takimata lorem clita diam lorem labore, aliquyam eirmod magna et at est amet ea amet. Ut ea dolores diam no, lorem stet labore vero labore takimata clita. Rebum dolores sadipscing."
-                      .text
-                      .textStyle(context.captionStyle)
-                      .make()
-                      .p16()
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
                   ],
                 ).py64(),
               ),
