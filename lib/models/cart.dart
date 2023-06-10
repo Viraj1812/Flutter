@@ -2,6 +2,12 @@ import 'package:first_project/models/catalog.dart';
 
 class CartModel{
 
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   //catalog field
   late CatalogModel _catalog;
 
@@ -12,6 +18,7 @@ class CartModel{
   CatalogModel get catalog => _catalog;
 
   set catalog(CatalogModel newCatalog){
+    // ignore: unnecessary_null_comparison
     assert(newCatalog != null);
     _catalog = newCatalog;
   }
