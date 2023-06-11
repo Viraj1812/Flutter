@@ -1,12 +1,20 @@
+import 'package:first_project/models/cart.dart';
+import 'package:first_project/models/catalog.dart';
 import 'package:first_project/pages/cart_page.dart';
 import 'package:first_project/pages/home_page.dart';
 import 'package:first_project/pages/login_page.dart';
 import 'package:first_project/utils/routes.dart';
 import 'package:first_project/widgets/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import 'core/store.dart';
 
 void main() {
-  runApp(MyApp());
+  
+  runApp(VxState(
+    store: MyStore(CatalogModel(),CartModel()),
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
