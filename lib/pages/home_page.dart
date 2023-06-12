@@ -5,7 +5,6 @@ import 'package:first_project/models/cart.dart';
 import 'package:first_project/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:first_project/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -32,7 +31,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
     // var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     var responce = await http.get(Uri.parse(url));
     var catalogJson = responce.body;
